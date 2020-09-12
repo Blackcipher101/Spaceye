@@ -63,7 +63,7 @@ for i in range (2,img.shape[1]-2):
     if i in adblue and i in adred:
         adlinesfinal.append(i)
 for i in range(len(adlinesfinal)):
-    wavelenght=((700-399)*adlinesfinal[i])/img1.shape[1]
+    wavelenght=((700-400)*adlinesfinal[i])/img1.shape[1]
     wavelenght+=400
     print(wavelenght, ' ', adlinesfinal[i])
 
