@@ -68,58 +68,67 @@ for i in range (2,img.shape[1]-2):
         adlinesfinal.append(i)
     if (img[0,i,2]+img[0,i,0])<10 and i in adgreen:
         adlinesfinal.append(i)
-H=0
-Fe=0
-Mn=0
-He=0
-Heion=0
-CN=0
-Na=0
-TiO=0
-CaH=0
+H=[]
+Fe=[]
+Mn=[]
+He=[]
+Heion=[]
+CN=[]
+Na=[]
+TiO=[]
+CaH=[]
+dopplershift=0
 for i in range(len(adlinesfinal)):
     wavelenght=((300)*adlinesfinal[i])/int(img1.shape[1])
     wavelenght+=400.00000000
-    print wavelenght,' ',adlinesfinal[i]
     wavelength.append(wavelenght)
-
 for i in range(len(wavelength)):
     if wavelength[i]<=660 and wavelength[i]>=652: #656
-        H+=1
-        print(H)
+        H.append(wavelength[i])
     if wavelength[i]<=408 and wavelength[i]>=400: #404.5
-        Fe+=1
-        Mn+=1
+        Fe.append(wavelength[i])
+        Mn.append(wavelength[i])
     if wavelength[i]<=425 and wavelength[i]>=417:
-        He+=1
+        He.append(wavelength[i])
     if wavelength[i]<=444 and wavelength[i]>=434:
-        Heion+=1
+        Heion.append(wavelength[i])
     if wavelength[i]<=429 and wavelength[i]>=421:
-        CN+=1
+        CN.append(wavelength[i])
     if wavelength[i]<=593 and wavelength[i]>=585:
-        Na+=1
+        Na.append(wavelength[i])
     if wavelength[i]<=635 and wavelength[i]>=629:
-        TiO+=1
-    if wavelength[i]<=639 and wavelength[i]>=634:
-        CaH+=1
-if  H>2:
-    print"Hydogen present"
-if  He>2:
-    print"Helium present"
-if  Fe>2:
-    print "Iron present"
-if  Mn>2:
-    print "Mn present"
-if  Heion>2:
-    print"Helium ion present"
-if  CN>2:
-    print "CN radical present"
-
-if  TiO>2:
-    print "TiO present"
-if CaH>2:
-    print "CaH present"
-
+        TiO.append(wavelength[i])
+    if wavelength[i]<=639 and wavelength[i]>=633:
+        CaH.append(wavelength[i])
+val=max(len(CaH),len(H),len(Fe),len(Heion),len(CN),len(Na),len(TiO))
+if val==len(TiO):
+    avg=sum(TiO)/len(TiO)
+    dopplershift=(avg-632)/632
+if val==len(H):
+    avg=sum(H)/len(H)
+    dopplershift=(avg-656.3)/656.3
+if val==len(He):
+    avg=sum(He)/len(He)
+    dopplershift=(avg-421)/421
+if val==len(Fe):
+    avg=sum(Fe)/len(Fe)
+    dopplershift=(avg-404.5)/404.5
+if val==len(Heion):
+    avg=sum(Heion)/len(Heion)
+    dopplershift=(avg-440)/440
+if val==len(Na):
+    avg=sum(Na)/len(Na)
+    dopplershift=(avg-588.9)/588.9
+if val==len(CaH):
+    avg=sum(CaH)/len(CaH)
+    dopplershift=(avg-634)/634
+if val==len(CN):
+    avg=sum(CN)/len(CN)
+    dopplershift=(avg-420)/420
+print dopplershift
+c=300000000
+vs=c*dopplershift
+print vs
 cv2.imshow("graph",specgraph)
 cv2.imshow("img",img)
 cv2.waitKey(0)
