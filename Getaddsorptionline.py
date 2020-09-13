@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img1 = cv2.imread('Astar.png')
+img1 = cv2.imread('Gstar.png')
 img=cv2.medianBlur(img1,7)
 #cv2.namedWindow('img', cv2.WINDOW_NORMAL)
 #cv2.namedWindow('graph', cv2.WINDOW_NORMAL)
@@ -59,6 +59,9 @@ for i in range (2,img.shape[1]-2):
         specgraph = cv2.line(specgraph,(i,0),(i,181),(0,255,255),1)
     if i in adblue and i in adred:
         specgraph = cv2.line(specgraph,(i,0),(i,181),(0,255,255),1)
+    if (img[0,i,2]+img[0,i,1])<10 and i in adblue:
+        specgraph = cv2.line(specgraph,(i,0),(i,181),(0,255,255),1)
+
 cv2.imshow("graph",specgraph)
 cv2.imshow("img",img)
 cv2.waitKey(0)
