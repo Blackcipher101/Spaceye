@@ -8,6 +8,10 @@ hsv = cv2.cvtColor(img1, cv2.COLOR_BGR2HSV)
 print hsv.shape
 #cv2.namedWindow('img', cv2.WINDOW_NORMAL)
 #cv2.namedWindow('graph', cv2.WINDOW_NORMAL)
+print "starting frequency"
+start=input()
+print "Final frequency"
+end=input()
 adlinesfinal=[]
 specgraph = np.zeros(img.shape, np.uint8)
 adred=[]
@@ -79,8 +83,8 @@ TiO=[]
 CaH=[]
 dopplershift=0
 for i in range(len(adlinesfinal)):
-    wavelenght=((300)*adlinesfinal[i])/int(img1.shape[1])
-    wavelenght+=400.00000000
+    wavelenght=((end-start)*adlinesfinal[i])/int(img1.shape[1])
+    wavelenght+=start
     wavelength.append(wavelenght)
 for i in range(len(wavelength)):
     if wavelength[i]<=660 and wavelength[i]>=652: #656

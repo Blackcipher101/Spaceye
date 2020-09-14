@@ -2,12 +2,16 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img1 = cv2.imread('Astar.png')
+img1 = cv2.imread('Gstar.png')
 img=cv2.medianBlur(img1,7)
 hsv = cv2.cvtColor(img1, cv2.COLOR_BGR2HSV)
 print hsv.shape
 #cv2.namedWindow('img', cv2.WINDOW_NORMAL)
 #cv2.namedWindow('graph', cv2.WINDOW_NORMAL)
+print "starting frequency"
+start=input()
+print "Final frequency"
+end=input()
 adlinesfinal=[]
 specgraph = np.zeros(img.shape, np.uint8)
 adred=[]
@@ -78,46 +82,46 @@ Na=0
 TiO=0
 CaH=0
 for i in range(len(adlinesfinal)):
-    wavelenght=((300)*adlinesfinal[i])/int(img1.shape[1])
-    wavelenght+=400.00000000
+    wavelenght=((end-start)*adlinesfinal[i])/int(img1.shape[1])
+    wavelenght+=start
     print wavelenght,' ',adlinesfinal[i]
     wavelength.append(wavelenght)
 
 for i in range(len(wavelength)):
-    if wavelength[i]<=660 and wavelength[i]>=652: #656
+    if wavelength[i]<=661 and wavelength[i]>=649: #656
         H+=1
         print(H)
-    if wavelength[i]<=408 and wavelength[i]>=400: #404.5
+    if wavelength[i]<=409 and wavelength[i]>=400: #404.5
         Fe+=1
         Mn+=1
-    if wavelength[i]<=425 and wavelength[i]>=417:
+    if wavelength[i]<=425 and wavelength[i]>=415:
         He+=1
-    if wavelength[i]<=444 and wavelength[i]>=434:
+    if wavelength[i]<=445 and wavelength[i]>=435:
         Heion+=1
-    if wavelength[i]<=429 and wavelength[i]>=421:
+    if wavelength[i]<=430 and wavelength[i]>=420:
         CN+=1
-    if wavelength[i]<=593 and wavelength[i]>=585:
+    if wavelength[i]<=594 and wavelength[i]>=584:
         Na+=1
-    if wavelength[i]<=635 and wavelength[i]>=629:
+    if wavelength[i]<=634 and wavelength[i]>=624:
         TiO+=1
-    if wavelength[i]<=639 and wavelength[i]>=634:
+    if wavelength[i]<=639 and wavelength[i]>=632:
         CaH+=1
-if  H>2:
+if  H>=2:
     print"Hydogen present"
-if  He>2:
+if  He>=2:
     print"Helium present"
-if  Fe>2:
+if  Fe>=2:
     print "Iron present"
-if  Mn>2:
+if  Mn>=2:
     print "Mn present"
-if  Heion>2:
+if  Heion>=2:
     print"Helium ion present"
-if  CN>2:
+if  CN>=2:
     print "CN radical present"
 
-if  TiO>2:
+if  TiO>=2:
     print "TiO present"
-if CaH>2:
+if CaH>=2:
     print "CaH present"
 
 cv2.imshow("graph",specgraph)
