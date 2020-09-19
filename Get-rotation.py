@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
+import math
 cap = cv2.VideoCapture('latest_1024_0304.mp4')
 
 # take first frame of the video
@@ -63,7 +64,7 @@ while(1):
         # Draw it on image
         x,y,w,h = track_window
         if s==0:
-            print x,',',y
+            x1,y1=x,y
             s+=1
         img2 = cv2.rectangle(frame, (x,y), (x+w,y+h), 255,2)
         img2 = cv2.circle(img2,leftmost, 12, (0,255,255), -1)
@@ -76,11 +77,11 @@ while(1):
             break
     else:
         break
-print x,',',y
-
-
-
-
+x2,y2=x,y
+distance=math.sqrt((x1-x2)**2)
+distance1=math.sqrt((leftmost[0]-rightmost[0])**2)
+time=(48*distance1*3.14)/distance
+print time
 cv2.imshow("images",img2)
 cv2.imshow("image06",img1)
 cv2.waitKey(0)
