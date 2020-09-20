@@ -161,8 +161,8 @@ def elements(filename,start,end,blur):
     TiO=0
     CaH=0
     for i in range(len(adlinesfinal)):
-        wavelenght=((int(end)-int(start))*adlinesfinal[i])/int(img1.shape[1])
-        wavelenght+=int(start)
+        wavelenght=((float(end)-float(start))*adlinesfinal[i])/int(img1.shape[1])
+        wavelenght+=float(start)
 
         wavelength.append(wavelenght)
 
@@ -276,8 +276,8 @@ def speed(filename,start,end,blur):
     CaH=[]
     dopplershift=0
     for i in range(len(adlinesfinal)):
-        wavelenght=((int(end)-int(start))*adlinesfinal[i])/int(img1.shape[1])
-        wavelenght+=int(start)
+        wavelenght=((float(end)-float(start))*adlinesfinal[i])/int(img1.shape[1])
+        wavelenght+=float(start)
         wavelength.append(wavelenght)
     for i in range(len(wavelength)):
         if wavelength[i]<=660 and wavelength[i]>=652: #656
