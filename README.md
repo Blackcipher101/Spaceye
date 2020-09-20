@@ -5,7 +5,7 @@ celestial bodies from thier spectrum.So I set out to make a tool that extract th
 
 Spectrum is basically a collection of all the colors in the image split up this can be taken from spectrometers u can make a spectrometer at home for <a href="https://www.youtube.com/watch?v=IA5BTD-aelo">10$</a>
 <br>
-It looks like
+It looks like:
 
 <img src="Gstar.png">
 
@@ -21,16 +21,16 @@ This all is packaged in a simple GUI.
 
 ### How to use :gear:
 
-Its pretty simple 
+**Step 1: clone the repo**
 ```
-git clone <git-link>
+git clone https://github.com/Blackcipher101/Spaceye.git
 ```
-then
+**Step 2: install required packages**
 ```
 pip install opencv-python
 pip install PySimpleGUI
 ```
-then
+**Step3: Showtime**
 ```
 python3 main.py
 ```
@@ -58,7 +58,7 @@ Enter your start and end frquency of the spectrometer try looking up <a href="ht
 
 <img src="Images/Screenshot from 2020-09-20 15-27-41.png">
 
-#### Note: - sign stands for going away from us
+#### Note: `-` sign stands for going away from us
 Yaah its all done that simple right,
 
 I have cross-verified the elements with what are mostly find in those type of stars and it matches up 90% of the time and also the speed and weight numbers.
@@ -68,8 +68,8 @@ Enter the duration of the video
 an leave it
 <img src="Images/Screenshot from 2020-09-20 15-59-11.png">
 
-I missed the  accurtae rotation time by 0.74 days which is 27days
-Disclamer:Only gives rotation of th middle part as in some celestial bodies different regions have differnt times
+I missed the accurate rotation time by 0.74 days which is 27 days
+Disclamer:Only gives rotation of the middle part as in some celestial bodies different regions have differnt times
 
 ### Contribution :handshake:
 Feel Free to make issues and send PRs :innocent:
