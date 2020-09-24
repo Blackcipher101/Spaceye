@@ -487,7 +487,7 @@ layout = [
     ]
 ]
 
-window = sg.Window("Image Viewer", layout, resizable=True)
+window = sg.Window("Spaceye", layout, resizable=True)
 
 # Run the Event Loop
 while True:
