@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+#ignore video and image files
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.png
+
+
+# Distribution / packaging
+.Python
+numpy/
+sg/
+cv2/
+pyplot/
+threading/
+math/
+PysimpleGUI
+
