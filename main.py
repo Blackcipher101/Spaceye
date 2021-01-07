@@ -457,7 +457,7 @@ image_viewer_column = [
     [sg.Text("For Image",text_color="#FFFF00",)],
     [sg.Button("OK")],
     [sg.Slider(range=(1,8),
-         default_value=4,
+         default_value=6,
          size=(20,15),
          orientation='horizontal',
          font=('Helvetica', 12),
