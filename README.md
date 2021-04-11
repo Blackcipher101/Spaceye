@@ -1,4 +1,4 @@
-<img src="https://kwoc.kossiitkgp.org/static/media/circle.33e6ce0d.svg" width='100' height='80'>
+
 
 [![Badge](https://img.shields.io/badge/KWOC-2020-blueviolet.svg)](https://shields.io/)
 # Spaceye :milky_way:
