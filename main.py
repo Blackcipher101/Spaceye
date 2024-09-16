@@ -475,7 +475,23 @@ image_viewer_column = [
     [sg.InputText(key='-time-',
     size=(20,15))],
     [sg.Submit(), sg.Cancel()],
-
+    [sg.Text("Click 'A' or 'B'or 'F' or 'G'or 'M' or 'O' or 'K'  to save the respective celestial body:")],
+    [sg.InputText(key='A' or 'B'or 'F' or 'G'or 'M' or 'O' or 'K' )
+    if ( key== ord('A')):
+        cv2.imwrite('Astar.png', Astar)
+    if ( key== ord('B')):
+        cv2.imwrite('Bstar.png', Bstar)
+    if ( key== ord('F')):
+        cv2.imwrite('Fstar.png', Fstar)
+    if ( key== ord('G')):
+        cv2.imwrite('Gstar.png', Gstar)
+    if ( key== ord('K')):
+        cv2.imwrite('Kstar.png', Kstar)
+    if ( key== ord('M')):
+        cv2.imwrite('Mstar.png', Mstar)
+    if ( key== ord('O')):
+        cv2.imwrite('Ostar.png', Ostar)
+        print("image is saved")
 ]
 
 # ----- Full layout -----
